@@ -200,47 +200,63 @@ int main()	//função principal do sistema
 {
 	int opcao=0;	//variável interna da função "main", armazena o valor de escolha do cliente no "MENU", (1,2 ou 3).
 	int laco=1;	//loop definido para reiniciar o menu caso a opção seja inválida
+	char senhaDigitada[10]="a";
+	int comparacao;
+	printf("***** CLIENTES EBAC *****\n\n");	//anuncia o nome do programa.
+	printf("AdminUser!\n\nDigite a sua senha:");
+	scanf("%s",senhaDigitada);
 	
-	for(laco=1;laco=1;)	//complemento do loop/laço, executa sempre pois o valor de entrada e de saída são iguais
+	comparacao = strcmp(senhaDigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-		system("cls");	//o sistema operacional limpa a tela
-	
-		setlocale(LC_ALL, "Portuguese");	//define a linguagem local dos usuários do programa.
 		
-		printf("***** CLIENTES EBAC *****\n\n");	//anuncia o nome do programa.
-		printf("\tMENU:\n\n");	//anuncia que o cliente está no menu de opções.
-		printf("\t1 - Registrar novo cliente\n");	//anuncia a escolha "1".
-		printf("\t2 - Consultar cliente\n ");	//anuncia a escolha "2".
-		printf("\t3 - Excluir cliente\n\n");	//anuncia a escolha "3".
-		printf("\t4 - Sair\n\n");
-		
-		scanf("%d", &opcao);	//armazena a opção do cliente na variável "opcao".
-		
-		system("cls");	//limpar a tela.
-		
-		switch(opcao)	//switch case das opções
+		for(laco=1;laco=1;)	//complemento do loop/laço, executa sempre pois o valor de entrada e de saída são iguais
 		{
-			case 1:	//caso a escolha do usuário for "1", executa a próxima linha de comando
-				cadastro();	//caso a escolha do usuário seja "1", a função "cadastro" é executada
-				break;	//usado para separar as opções dentro do switch case
+			system("cls");	//o sistema operacional limpa a tela
 		
-			case 2:	//caso a escolha do usuário for "2", executa a próxima linha de comando
-				consulta();	//caso a escolha do usuário seja "2", a função "consulta" é executada
-				break;	//usado para separar as opções dentro do switch case
-		
-			case 3:	//caso a escolha do usuário for "3", executa a próxima linha de comando
-				deletar();	//caso a escolha do usuário seja "3", a função "deletar" é executada
-				break;	//usado para separar as opções dentro do switch case
-				
-			case 4:
-				printf("Obrigado por utilizar o sistema!\n");
-				return 0;
-				break;
-		
-			default:	//caso a escolha do usuário não existir nas opções", executa a próxima linha de comando
-				printf("Por favor, selecione uma opção válida!\n\n");	//escreve na tela "Por favor, selecione uma opção válida!" com duas quebras de linhas logo após.
-				system("pause");	//o sistema operacional da um "pause"
-				break;	//usado para separar as opções dentro do switch case
+			setlocale(LC_ALL, "Portuguese");	//define a linguagem local dos usuários do programa.
+			
+			printf("***** CLIENTES EBAC *****\n\n");	//anuncia o nome do programa.
+			printf("\tMENU:\n\n");	//anuncia que o cliente está no menu de opções.
+			printf("\t1 - Registrar novo cliente\n");	//anuncia a escolha "1".
+			printf("\t2 - Consultar cliente\n ");	//anuncia a escolha "2".
+			printf("\t3 - Excluir cliente\n\n");	//anuncia a escolha "3".
+			printf("\t4 - Sair\n\n");
+			
+			scanf("%d", &opcao);	//armazena a opção do cliente na variável "opcao".
+			
+			system("cls");	//limpar a tela.
+			
+			switch(opcao)	//switch case das opções
+			{
+				case 1:	//caso a escolha do usuário for "1", executa a próxima linha de comando
+					cadastro();	//caso a escolha do usuário seja "1", a função "cadastro" é executada
+					break;	//usado para separar as opções dentro do switch case
+			
+				case 2:	//caso a escolha do usuário for "2", executa a próxima linha de comando
+					consulta();	//caso a escolha do usuário seja "2", a função "consulta" é executada
+					break;	//usado para separar as opções dentro do switch case
+			
+				case 3:	//caso a escolha do usuário for "3", executa a próxima linha de comando
+					deletar();	//caso a escolha do usuário seja "3", a função "deletar" é executada
+					break;	//usado para separar as opções dentro do switch case
+					
+				case 4:
+					printf("Obrigado por utilizar o sistema!\n");
+					return 0;
+					break;
+			
+				default:	//caso a escolha do usuário não existir nas opções", executa a próxima linha de comando
+					printf("Por favor, selecione uma opção válida!\n\n");	//escreve na tela "Por favor, selecione uma opção válida!" com duas quebras de linhas logo após.
+					system("pause");	//o sistema operacional da um "pause"
+					break;	//usado para separar as opções dentro do switch case
+			}
 		}
+	}
+	
+	else
+	{
+		printf("Senha incorreta!");
 	}
 }
