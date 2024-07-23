@@ -212,6 +212,7 @@ int main()	//função principal do sistema
 		printf("\t1 - Registrar novo cliente\n");	//anuncia a escolha "1".
 		printf("\t2 - Consultar cliente\n ");	//anuncia a escolha "2".
 		printf("\t3 - Excluir cliente\n\n");	//anuncia a escolha "3".
+		printf("\t4 - Sair\n\n");
 		
 		scanf("%d", &opcao);	//armazena a opção do cliente na variável "opcao".
 		
@@ -230,6 +231,11 @@ int main()	//função principal do sistema
 			case 3:	//caso a escolha do usuário for "3", executa a próxima linha de comando
 				deletar();	//caso a escolha do usuário seja "3", a função "deletar" é executada
 				break;	//usado para separar as opções dentro do switch case
+				
+			case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;
 		
 			default:	//caso a escolha do usuário não existir nas opções", executa a próxima linha de comando
 				printf("Por favor, selecione uma opção válida!\n\n");	//escreve na tela "Por favor, selecione uma opção válida!" com duas quebras de linhas logo após.
